@@ -37,5 +37,9 @@ with open(csvpath,newline="") as csvfile:
     print(f"Greatest Increase in Profits: {Greatest_Increase}")
     print(f"Greatest Decrease in Profits: {Greatest_Decrease}")
   
-    #printing calculations
-    
+    textfile= open("main.txt","w")
+    textfile.writelines("Total Months " + str(total_row) + "\n")
+    textfile.writelines("Total: " + str(total_amount) + "\n")
+    textfile.writelines("Average Change: " + str(average_change)+"\n")
+    textfile.writelines(f"Greatest Increase in Profits: {Greatest_Increase} \n")
+    textfile.writelines(f"Greatest Decrease in Profits: {Greatest_Decrease} \n")
