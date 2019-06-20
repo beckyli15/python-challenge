@@ -21,11 +21,14 @@ with open(csvpath,newline="") as csvfile:
         unique_candidate.append(candidate) #unique_candidate=[khan] 
         # print(candidate)
         candidate_votes = candidate_list.count(candidate) #2218231
-        candidate_vote_percentage = candidate_votes/total_vote #63
-        unique_candidate.append(round(candidate_vote_percentage, 2)) #unique_candidate=[khan,63]
+        candidate_vote_percentage = ((candidate_votes/total_vote)*100)#63
+        unique_candidate.append('{:.2f}%'.format(candidate_vote_percentage)) #unique_candidate=[khan,63]
         unique_candidate.append(candidate_votes) #unique_candidate=[khan,63,2218231]
         print(unique_candidate)
-        unique_candidate=[]
+        
+        
+        candidate.loc[candidate['candidate_votes'].idxmax(candidate_votes)]
+    
         # organized_candidate_list.append(unique_candidate) #organized_candidate_list = [[khan, 63, 2218231]]
 
 
